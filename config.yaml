@@ -1,0 +1,31 @@
+# Configuration file for Dental Health Quantum ML Model
+
+# Data paths
+data:
+  healthy_dir: "healthy images"
+  deficiency_dir: "vitamin c deficiency"
+  test_split: 0.2
+
+# Model architecture
+model:
+  feature_dim: 8          # Number of qubits
+  num_layers: 2           # Quantum variational layers
+  pretrained_cnn: true    # Use pretrained ResNet backbone
+
+# Training parameters
+training:
+  batch_size: 4
+  epochs: 20
+  learning_rate: 0.001
+  seed: 42
+  
+# Output
+output:
+  save_dir: "output"
+  checkpoint_dir: "output/checkpoints"
+  
+# Inference
+inference:
+  model_path: "output/checkpoints/best_model.pth"
+  visualize: true
+
